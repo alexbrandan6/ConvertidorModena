@@ -22,10 +22,20 @@ namespace ConvertidorMoneda
             {
                 try
                 {
-                    ddlMonedaDesde.DataSource = acc.EjecutarScript("SELECT * FROM tblMoneda");
+                    ddlMonedaDesde.DataSource = acc.EjecutarScript("SELECT * FROM tblMoneda ORDER BY Descripcion ASC");
                     ddlMonedaDesde.DataBind();
-                    ddlMonedaA.DataSource = acc.EjecutarScript("SELECT * FROM tblMoneda");
+
+                    ddlMonedaA.DataSource = acc.EjecutarScript("SELECT * FROM tblMoneda ORDER BY Descripcion ASC");
                     ddlMonedaA.DataBind();
+
+                    string stQuery = "SELECT mpm.id, m.Descripcion AS Moneda, mpm.Descripcion AS Descripcion, mpm.idMonedaDesde, mpm.idMonedaA, mpm.Valor " +
+                                     "FROM tblMonedaPorMoneda mpm " +
+                                     "INNER JOIN " +
+                                     "tblMoneda m " +
+                                     "ON m.id = mpm.idMonedaDesde " +
+                                     "ORDER BY m.Descripcion ASC ";
+                    rptMonedaPorMoneda.DataSource = acc.EjecutarScript(stQuery);
+                    rptMonedaPorMoneda.DataBind();
                 }
                 catch(Exception ex)
                 {
