@@ -33,13 +33,22 @@ namespace ConvertidorMoneda
         protected global::System.Web.UI.WebControls.TextBox txtMonedaIngresada;
 
         /// <summary>
-        /// Control ddlMoneda.
+        /// Control ddlMonedaDesde.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlMoneda;
+        protected global::System.Web.UI.WebControls.DropDownList ddlMonedaDesde;
+
+        /// <summary>
+        /// Control ddlMonedaA.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlMonedaA;
 
         /// <summary>
         /// Control btnConvertir.
@@ -51,13 +60,13 @@ namespace ConvertidorMoneda
         protected global::System.Web.UI.WebControls.Button btnConvertir;
 
         /// <summary>
-        /// Control alertResultado.
+        /// Control containerResultado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertResultado;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl containerResultado;
 
         /// <summary>
         /// Control lblResultado.

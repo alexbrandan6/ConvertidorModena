@@ -13,15 +13,19 @@
 </head>
 <body>
     <form id="form1" runat="server">
-            <div class="container pt-4">
+            <div class="container pt-2 pb-2 bg-light">
                 <div class="row d-flex justify-content-center">
                     <div class="col-6">
                         <label class="form__label">Cantidad</label>
                         <asp:TextBox ID="txtMonedaIngresada" runat="server" CssClass="form__field allownumericwithdecimal"></asp:TextBox>
                     </div>
-                    <div class="col-6">
-                        <label class="form__label">Moneda</label>
-                        <asp:DropDownList ID="ddlMoneda" runat="server" CssClass="form__field" DataTextField="Descripcion" DataValueField="Valor"></asp:DropDownList>
+                    <div class="col-3">
+                        <label class="form__label">Desde</label>
+                        <asp:DropDownList ID="ddlMonedaDesde" runat="server" CssClass="form__field" DataTextField="Descripcion" DataValueField="id"></asp:DropDownList>
+                    </div>
+                    <div class="col-3">
+                        <label class="form__label">A la</label>
+                        <asp:DropDownList ID="ddlMonedaA" runat="server" CssClass="form__field" DataTextField="Descripcion" DataValueField="id"></asp:DropDownList>
                     </div>
                 </div>
 
@@ -32,15 +36,10 @@
                 </div>
             </div>
 
-            <div class="container pt-2">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-6">
-                        <div id="alertResultado" runat="server" class="alert alert-success" role="alert" visible="false">
-                            La conversion es de: 
-                            <strong>
-                                <label id="lblResultado" runat="server" class="form-label"></label>
-                            </strong>
-                        </div>
+            <div id="containerResultado" class="container pt-2 pb-2 bg-light" runat="server" visible="false">
+                <div class="row justify-content-center">
+                    <div class="col-6 d-flex justify-content-center border border-dark border-1 rounded-pill">
+                        <label id="lblResultado" runat="server" class="p-2"></label>
                     </div>
                 </div>
             </div>
